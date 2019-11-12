@@ -1,0 +1,186 @@
+
+--------------------------------------------------------------------------------
+10/26/2019 09:43:58.95   -    To:vali.my@gmail.com_From:"LookBetterOnline.com" <ann@lookbetteronline.com>
+Subject:Optional Service
+Body:Customer name: FirstName1  LastName2<br />
+Customer Email: vali.my24@gmail.com<br />
+
+<br />
+<br />
+Session date: Wednesday October 30, 2019 06:00 PM <br />
+
+Location: AddressHome1<br />
+City: New York1<br />
+State: NY<br />
+Zip Code: 10023<br />
+
+<br />
+Service Category: Photo Enhancement<br />
+Service Name: Retouching<br />
+Service Email: ann@lookbetteronline.com<br />
+Uri: http://localhost:53463/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 09:43:58.96   -    To:vali.my@gmail.com_From:"LookBetterOnline.com" <ann@lookbetteronline.com>
+Subject:Optional Service
+Body:Customer name: FirstName1  LastName2<br />
+Customer Email: vali.my24@gmail.com<br />
+
+<br />
+<br />
+Session date: Wednesday October 30, 2019 06:00 PM <br />
+
+Location: AddressHome1<br />
+City: New York1<br />
+State: NY<br />
+Zip Code: 10023<br />
+
+<br />
+Service Category: Profile Makeover<br />
+Service Name: Profile Review<br />
+Service Email: deanshanson@gmail.com<br />
+Uri: http://localhost:53463/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 09:43:58.98   -    To:vali.my@gmail.com_From:"Lookbetteronline photographers" <ann@lookbetteronline.com>
+Subject:Your photo session with LookBetterOnline.com
+Body:<p>
+    Dear FirstName1, <br /> <br />
+    Thanks for your ordering a photo shoot! We really appreciate your business and we're excited about providing you with outstanding photos to get you better results online.<br />
+</p>
+<p>
+     This email is to confirm your <b>tentative photo session</b> date on Wednesday October 30, 2019 06:00 PM
+    <br /> Photo Session Type: Dating Photos<br />
+    
+    
+    <b>Optional Services:</b><br /> <br /> 
+    
+    Service Category: Photo Enhancement<br />
+    Service Name: Retouching<br />
+    Service Price: $ 143.99 USD<br />
+    Service Message: A light adjustment can improve the appearance of your photographs without "cheating"
+    
+    Service Category: Profile Makeover<br />
+    Service Name: Profile Review<br />
+    Service Price: $ 49.99 USD<br />
+    Service Message: Profile not getting the results you deserve? Ask dating expert and professional writer, Dean Shanson, to review your profile and give you detailed tips to get more emails.
+    <br />
+     <br /> www Promotion Data<br /> <br /> 
+     Promotion Name: testvali <br /> Promo Code: 19.40 <br /> Promotion Description: <br />  <br />
+
+    <b></b>&nbsp;
+</p>
+<p>
+    <a href="http://lookbetteronline.com/home/Page.asp?page=tips">How to prepare for your photo shoot</a><br />
+    <br /> Your photographer will contact you soon (within just 2 business days) to confirm your appointment. At that time they will let you know if the date requested is available, or if they have to reschedule with you for another time and date. Nothing is set in stone until you have spoken with the photographer. At the time of contact, they will speak to you about your photo package, wardrobe choices, location of shoot and any other remaining details with you regarding your photo session.<br /> <br /> After the photo shoot, your photographer will ask you to choose your favorite photos.&nbsp;
+    Remember these are web ready images (1200x1800 pixels) suitable for your online dating sites. He/She will then upload them to the LookBetterOnline support team (within 2 business days), and we will check them to ensure they meet the highest quality, then you will be notified by email that your photos are ready. You will then simply login to collect your new photos. We hope that you love them!&nbsp; Please remember to let your photographer know how pleased you are by leaving a testimonial and rate your photo session. This will be very easy to do before you download your images.<br />
+</p>
+<p style="word-wrap: break-word;">
+    <strong>Cancellations </strong><br />If you cancel within 24 hours of your shoot, you are still obligated to
+    pay for that shoot as LookBetterOnline is responsible to pay the
+    photographer for scheduling you that day. When rescheduling your new
+    shoot with the photographer, we will offer you a discounted rate for the
+    same package but ask that you then pay your photographer directly on
+    the day of your new shoot.<br />&nbsp;
+    <br />Discounted rates apply only when you are rescheduling a photo shoot after you cancelled your first within 24 hours of originally scheduled shoot.  Rates are as follows:&nbsp; Silver package - $85, Gold package - $95, Platinum package - $115.
+    <br />
+</p><p>
+    Please also make a note of the login information below, or print this information for later reference. <br />
+    <br />
+    Your login information: <br />
+    <br />&nbsp;<span style="font-weight: bold;">Email: </span>vali.my24@gmail.com<br /> &nbsp;
+    <br />Have fun and enjoy your photo session! <br />
+    <br />
+    With warmest regards<br />
+</p>
+<div>Ann Maas<br />Director of Services<br />LookBetterOnline.com<br /></div>
+Uri: http://localhost:53463/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 09:43:58.99   -    To:vali.my@gmail.com_From:"LookBetterOnline.com" <ann@lookbetteronline.com>
+Subject:Photo shoot pending your acceptance
+Body:<p>Dear Vali Photographer Test,<br />
+  <br />
+  You have been chosen to photograph the customer FirstName1 LastName2<br />
+  <br />
+<br/>
+Client:  FirstName1 LastName2<br/>
+Session details:  Wednesday October 30, 2019 06:00 PM<br/>
+Type of package:  Gold<br/>
+Retouching ordered: Yes
+
+<br/>ViDA Job: No
+
+<br/>ViDA Snap option: No
+<br/>
+I want the photographer to come to me:  Yes<br/><br/>
+Address:  AddressHome1 New York1, NY, 10023 <br/>
+Phone: 1234567890 <br/>
+
+Client email: vali.my24@gmail.com<br />
+  <br />
+  NOTE: You must accept this job within 24 hours. Please remember that you can accept the job and reschedule with 
+  the customer&nbsp; if you're not available at the requested date or time.<br />
+  <br />
+
+Click on the following link to ACCEPT Job: <a href="http://www2.lookbetteronline.com/home/ActionR.asp?action=phjob&amp;a=1&amp;guid=AA7FEA45-3800-4D99-8F50-5430B93744D2">http://www2.lookbetteronline.com/home/ActionR.asp?action=phjob&amp;a=1&amp;guid=AA7FEA45-3800-4D99-8F50-5430B93744D2</a>
+<br /><br />
+Click on the following link to DECLINE Job: <a href="http://www2.lookbetteronline.com/home/ActionR.asp?action=phjob&amp;a=0&amp;guid=AA7FEA45-3800-4D99-8F50-5430B93744D2">http://www2.lookbetteronline.com/home/ActionR.asp?action=phjob&amp;a=0&amp;guid=AA7FEA45-3800-4D99-8F50-5430B93744D2</a>
+<br /><br />
+
+
+  Click <a href="https://lookbetteronline.com/profiles/Photographer/Login.aspx">here</a> to login on your account<br />
+  <br />
+  If you re-schedule the job with the customer, please update the date and time on your interface<br />
+  <br />
+  Thanks and good shooting!<br />
+  <br />
+  <style></style></p><div><font size="2" face="Arial">Ann Maas<br /></font><font size="2" face="Arial">Director of Services</font><br /><font size="2" face="Arial">LookBetterOnline.com<br /><br /></font></div>
+  ann@lookbetteronline.com <br />
+<p></p>
+Uri: http://localhost:53463/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 09:43:59.00   -    To:vali.my@gmail.com_From:"LookBetterOnline.com" <ann@lookbetteronline.com>
+Subject:Assignment of job
+Body:Dear Administrator,<br /><br />
+
+The following job was just assigned to a photographer:<br /><br />
+
+Customer name: FirstName1  LastName2<br />
+Photographer name: Vali Photographer Test, Vali DO NOT DELETE<br />
+<br />
+Session date: Wednesday October 30, 2019 06:00 PM <br />
+Photo Session Type: Dating Photos<br />
+
+
+
+<br/>ViDA Job: No
+
+<br />ViDA Snap Option: No
+
+
+<br />Optional Services:<br />
+
+
+Service Category: Photo Enhancement<br />
+Service Name: Retouching<br />
+Service Price: $ 143.99 USD<br />
+Service Message: A light adjustment can improve the appearance of your photographs without "cheating"<br />
+
+Service Category: Profile Makeover<br />
+Service Name: Profile Review<br />
+Service Price: $ 49.99 USD<br />
+Service Message: Profile not getting the results you deserve? Ask dating expert and professional writer, Dean Shanson, to review your profile and give you detailed tips to get more emails.<br />
+
+
+
+<br />Location: AddressHome1<br />
+City: New York1<br />
+State: NY<br />
+Zip Code: 10023<br />
+
+
+Job ID: 14733<br />
+Photographer ID: 5945<br /><br />
+Uri: http://localhost:53463/Payment

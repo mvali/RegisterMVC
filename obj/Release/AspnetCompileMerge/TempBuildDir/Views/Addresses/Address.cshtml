@@ -1,0 +1,106 @@
+﻿@{ 
+    ViewBag.PageTitle = "Your Address";
+    ViewBag.MetaDescription = "address meta description text";
+}
+@section Scripts{
+    <script src="~/assets/scripts/country.js"></script>
+    @if (Register.Models.Job.j.Paid==true){<script>var paid = 1;</script>}
+}
+@model Register.Models.ZipDetails
+<section class="book-page">
+    <div class="container">
+        <h3 class="common-head"><a href="@Url.Action("Index","Book")"><i class="fa fa-angle-left" aria-hidden="true"></i></a> Please tell us your address</h3>
+        <div class="book-inner">
+            @using (Html.BeginForm("Index", "Addresses"))
+            { @Html.AntiForgeryToken()
+            <div class="form-group">@Html.ValidationSummary(true, "", new { @class= "text-danger" })</div>
+            <div class="form-group">
+                <div class="col-md-5 col-sm-5 col-xs-5 text-left">
+                    @Html.TextBoxFor(x => x.ZipCode, new { @autocomplete = "off", @placeholder = "Zip code", @Value = ViewBag.zip })
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                    <span id="zipmsg" class="collapse"></span>
+                    <span id="zipFound" class="collapse text-success">We have filled in details. You can change the City if does not match.</span>
+                    <span id="zipInvalid" class="collapse text-danger">Invalid zip code</span>
+                    <span id="zipNotFound" class="collapse text-danger">Zip not found on our database. Did you write it correctly?</span>
+                    <span id="zipLabel">Please tell us your zipcode for us to be able to locate you.</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">@Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger left100p" })</div>
+            </div>
+            <div class="form-group collapse" id="StateRow">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                    <div class="country">
+                        <div id="country" class="select"><img src="~/Assets/images/flags/th_usa.gif"></div>
+                        <div id="country-drop" class="dropdown">
+                            <ul>
+                                <li data-code="US" data-name="USA" data-cid="c32"><img src="~/Assets/images/flags/th_usa.gif"></li>
+                                <li data-code="CA" data-name="Canada" data-cid="c33"><img src="~/Assets/images/flags/th_canada.gif"></li>
+                            </ul>
+                        </div>
+                        @Html.HiddenFor(x=>x.CountryId, new {@Value=Model.CountryId })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    @Html.TextBoxFor(x => x.StateCode, new { @placeholder="State", @readonly=true, @Value=Model.StateCode })
+                    @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(x => x.State, new { @Value = Model.State })
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    @Html.TextBoxFor(x=>x.City, new { @placeholder="City", @Value = Model.City })
+                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    @Html.TextBoxFor(x=>x.AddressText, new { @placeholder="Address details", @Value = Model.AddressText })
+
+                    <label class="check-box">
+                        This is the same as my billing address
+                        @Html.CheckBoxFor(x=>x.AddressBillingSame, new { @checked=Model.AddressBillingSame })
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <iframe id="ifmap" src="https://www.google.com/maps/embed?pb=united%20states" width="100%" height="225" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+            <div class="form-group collapse" id="addressBill">
+                <div class="col-lg-12 col-md-12 col-xs-12"><hr /><h3 class="common-head">Your billing address<br />&nbsp;</h3>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-5">
+                    @Html.TextBoxFor(x => x.ZipCodeBill, new { @autocomplete = "off", @placeholder = "Billing Zip code", @Value = Model.ZipCodeBill })
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7">
+                    <span id="zipmsgbill" class="collapse"></span>
+                    <span id="zipFoundbill" class="collapse text-success">We have filled in details. You can change the City if does not match.</span>
+                    <span id="zipInvalidbill" class="collapse text-danger">Invalid zip code</span>
+                    <span id="zipNotFoundbill" class="collapse text-danger">Zip not found on our database. Did you write it correctly?</span>
+                    <span id="zipLabelbill">Billing zipcode required for us to be able to authorize you.</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">@Html.ValidationMessageFor(m => m.ZipCodeBill, "", new { @class = "text-danger left100p" })</div>
+            </div>
+            <div class="form-group collapse" id="StateRowBill">
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                    <div class="country">
+                        <div id="countryBill" class="select"><img src="~/Assets/images/flags/th_usa.gif"></div>
+                        @Html.HiddenFor(x => x.CountryIdBill, new { @Value = Model.CountryIdBill })
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    @Html.TextBoxFor(x => x.StateCodeBill, new { @placeholder = "State", @readonly = true, @Value = Model.StateCodeBill })
+                    @Html.ValidationMessageFor(m => m.StateBill, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(x => x.StateBill, new { @Value = Model.StateBill })
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    @Html.TextBoxFor(x => x.CityBill, new { @placeholder = "City", @Value = Model.CityBill })
+                    @Html.ValidationMessageFor(m => m.CityBill, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <button class="sign-btn@(Register.Models.Job.j.Paid? " hider" : "")" value="SUBMIT">SUBMIT</button>
+            <input type="hidden" id="zipaction" value="@ViewBag.zipAction"/>
+            }
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.PageTitle = "Services";
+    ViewBag.MetaDescription = "services view meta description text";
+}
+@model List<Register.Models.Service>
+@section Scripts{
+    <script src="~/assets/scripts/services.js"></script>
+    @if (Register.Models.Job.j.Paid == true){<script>var paid = 1;</script>}
+}
+<section class="services-sec">
+    <div class="container">
+        <h3 class="hidden-xs common-head">optional services available</h3><a class="next-btn" href="@Url.Action("SessionDate","SessionDateTime")">NEXT</a>
+        <h3 class="hidden-sm hidden-md hidden-lg common-head">optional services</h3>
+
+        <ul id="packages">
+            @foreach (var item in Model)
+            {
+                var serviceImage = item.Name.ToLower().Contains("retouch") ? "girl" : item.Name.ToLower().Contains("review") ? "services" : item.Name.ToLower().Contains("writing") ? "laptop" : "services";
+            <li class="item">
+                <figure><img src='~/Assets/images/@(serviceImage).png'></figure>
+                <figcaption>
+                    <h3>@item.Name</h3>
+                    <div class="price">
+                        $@Utils.MathRound(item.Price) @item.Currency
+                    </div>
+                    <div class="middle-sec"><p>@item.Text</p></div>
+                    <button class="add-btn @(Register.Models.Job.ServicePicked(item.Id) ? "hider" : "")" id='bAdd@(item.Id)' service="@item.Id">add</button>
+                    <button class="add-btn remove-btn @(Register.Models.Job.ServicePicked(item.Id) ? "" : "hider")" id='bDel@(item.Id)' service="@item.Id">remove</button>
+                </figcaption>
+            </li>
+            }
+
+        </ul>
+    </div>
+</section>

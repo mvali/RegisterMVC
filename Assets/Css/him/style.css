@@ -1,0 +1,779 @@
+/*header section css start here*/
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('font/HelveticaNeue-Medium.woff2') format('woff2'),
+        url('font/HelveticaNeue-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('font/HelveticaNeue.woff2') format('woff2'),
+        url('font/HelveticaNeue.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('font/HelveticaNeue-Light.woff2') format('woff2'),
+        url('font/HelveticaNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+body{font-family: 'Open Sans', sans-serif;}
+header {width: 100%;float: left;background: #2d252c; padding: 5px 0;}
+header nav.navbar.navbar-default {background: transparent;border: none;border-radius: 0px;    margin-bottom: 0px;}
+header div#bs-example-navbar-collapse-1 {padding: 0px;}
+header ul.nav.navbar-nav {width: 50%;float: right;text-align: right;}
+header ul.nav.navbar-nav li {text-align: right;float: none;display: inline-block;margin: 15px 5px;}
+header ul.nav.navbar-nav li:last-child {margin-right: 0px;}
+header ul.nav.navbar-nav li a {color: #fff;font-size: 16px; padding: 4px 17px;font-weight: 400;font-family: 'Open Sans', sans-serif;}
+header ul.nav.navbar-nav li.order-now a {text-transform: uppercase;border: 1px solid #fff;border-radius: 6px;font-size: 15px;font-family: 'Open Sans', sans-serif;}
+.navbar-brand {height: auto;padding: 0px 0px;}
+.bottom-header {width: 100%;float: left; padding: 10px 0; box-shadow: 0px 0px 3px #ccc;}
+.bottom-header .user-sec {width: 100%;float: left;}
+.bottom-header figure {width: 45px;height: 45px;float: left;}
+.bottom-header .user-sec img {width: 100%;border-radius: 100px;    height: 45px;}
+.bottom-header .user-sec figcaption {width:70%;float: left;margin-left: 10px;margin-top: 12px;font-size: 14px; font-weight: 400;font-family: 'Open Sans', sans-serif;}
+.bottom-header .menu-sec {width: 100%;float: left; text-align: center;}
+.bottom-header .menu-sec ul {width: 100%;float: left;padding: 0px;margin-bottom:0px;}
+.bottom-header .menu-sec ul li {list-style: none;display: inline-block;}
+.bottom-header .menu-sec ul li a {color: #999999;text-transform: uppercase;padding: 10px 26px;display: inline-block; transition: 0.5s;font-size: 14px;font-weight: 400;font-family: 'Open Sans', sans-serif;line-height: 25px;}
+.price-sec {text-align: right;}
+.price-sec h5 {color: #000;font-size: 20px;line-height: 25px; font-weight: 400;font-family: 'Open Sans', sans-serif;margin: 10px 0px;}
+.bottom-header .menu-sec ul li a img {margin-right: 14px;}
+.bottom-header .menu-sec ul li a:hover {text-decoration: none;color: #2d252c;} 
+.bottom-header .menu-sec ul li.active a {color: #010101;    font-weight: 600;}
+.choose-pack {width: 100%;float: left;text-align: center;padding: 50px 0;}
+.choose-pack h3 {width: 100%;float: left;text-align: center;margin-bottom: 80px;text-transform: capitalize;color: #000;font-weight: 500;    font-family: 'Helvetica Neue';}
+.choose-pack h3 a {float:right;}
+.choose-pack ul {width: 100%;float: left;padding: 0px;}
+.choose-pack ul  li.item {list-style: none;display: inline-block;width: 300px;text-align: center;border: 1px solid #4c4c4c; margin: 0px 10px;border-radius:10px;height: 470px;position: relative;    vertical-align: top;    transition: 0.5s;    max-width: 100%;}
+.choose-pack ul  li.item  .top-bar1 {background: #aaaaaa;padding: 20px 10px;color: #fff;text-transform: uppercase;    border-radius: 10px 10px 0px 0px;    top: -2px; position:relative;      left: -1px;  width: 300px;    font-family: 'Helvetica Neue';    font-weight: 500;    font-size: 20px;}
+.choose-pack ul  li.item  .middle-sec {width: 100%;padding: 12px 19px; float: left;min-height: 338px;}
+.middle-sec h4 {width: 100%;float: left; margin-top: 0px;margin-bottom: 15px;border-bottom: 2px solid #e3e3e3;padding-bottom: 16px;color: #000;font-size: 20px;font-family: 'Helvetica Neue';}
+.choose-pack ul  li.item  .middle-sec ol {width: 100%;float: left;    padding: 0px 20px;margin: 0px;}
+.middle-sec ol li {list-style: none;text-align: left;width: 100%;float: left; margin-bottom: 5px; padding-left: 20px; position: relative;font-family: 'Open Sans', sans-serif;font-weight: 300;font-size: 14px;}
+.middle-sec h6 {border-top: 2px solid #e3e3e3;width: 100%;float: left;text-align: left;font-size: 18px;color: #000; margin-top: 6px;padding-top: 12px;text-transform: capitalize;    font-weight: 500;    font-family: 'Helvetica Neue';}
+.chose-btn{background: #aaaaaa;width: 100%;text-transform: uppercase;font-size: 16px;color: #fff !important;border-radius: 5px;    max-width: 100%;display: inline-block;    font-family: 'Helvetica Neue';font-weight: 500;    transition: 0.5s; line-height: 45px;    height: 45px;    width: 270px;}
+.chose-btn:hover{text-decoration:none; background-color:#2d252c !important;}
+.choose-pack ul li.item .gold{background: #ebaa42;}
+.choose-pack ul li.item .platinum { background: #501acb;}
+.choose-pack > div > ul > li:nth-child(2) .middle-sec {min-height: 379px;}
+.choose-pack > div > ul > li:nth-child(2) {height: 512px;position: relative;top: -21px; box-shadow: 0px 0px 10px 0px #ccc;}
+.middle-sec ol li::before {background-image: url(../images/check-box.png);position: absolute;left: -10px;width: 24px;height: 20px;content: "";top: 2px; background-repeat: no-repeat;}
+header img {margin-top: 10px;}
+ol.sec-sec li {font-family: 'HelveticaNeue';text-transform: capitalize;color: #000;font-size: 14px;}
+.choose-pack ul > li:hover {box-shadow: 0px 0px 10px 0px #ccc;}
+
+/*service page css start here*/
+.services-sec {width: 100%;float: left;text-align: center; padding: 50px 0;}
+.common-head{width: 100%;float: left;text-align: center;margin-bottom: 40px;text-transform: capitalize; color: #000;
+font-weight: 500;font-family: 'Helvetica Neue'; margin-top: 0px;    font-size: 22px;}
+.services-sec ul {width: 100%;float: left;padding: 0px;}
+.services-sec ul li { width: 300px;list-style: none; display: inline-block;margin: 0px 10px;text-align: center;border-radius: 10px; border: 1px solid #4c4c4c;position: relative;transition: 0.5s;
+    max-width: 100%;margin-bottom: 20px;}
+.services-sec ul li img {width: 100%;border-radius: 10px 10px 0px 0px;}
+.services-sec ul li figcaption { width: 100%;float: left;padding: 20px 20px;}
+.services-sec ul li figcaption h3 {font-size: 20px;font-family: 'Helvetica Neue';font-weight: 500;color: #000; margin-top: 0px;width: 100%;float: left;}
+.services-sec ul li figcaption .price {width: 100%;float: left;font-size: 20px;font-family: 'Helvetica Neue';color: #000;border-top: 1px solid #E0E0E0;border-bottom: 1px solid #E0E0E0; line-height: 44px;margin-bottom: 16px;margin-top: 16px;    font-weight: 500;}
+.services-sec ul li figcaption p { width: 100%;float: left;font-size: 14px;color: #000;font-family: 'Open Sans', sans-serif;font-weight: 300;margin-bottom: 18px;}
+.services-sec ul li figcaption .middle-sec {min-height: 230px;}
+.add-btn { width: 270px;background: #16B400; border: none;height: 45px;border-radius: 10px;font-size: 16px;color: #fff;text-transform: uppercase;font-family: 'Helvetica Neue';transition: 0.5s;max-width: 100%;}
+.add-btn:hover {background: #2d252c;}
+.remove-btn {background: #E00000;}
+.services-sec > div > h3 a {color: #000;text-decoration: underline;float: right;font-family: 'Open Sans', sans-serif;font-weight: 500;     font-size: 14px;    line-height: 37px;}
+.services-sec ul > li:hover {box-shadow: 0px 0px 10px 0px #ccc;}
+figure {margin: 0px;}
+ul {  margin-left: 0px;}
+#packages .owl-dots {display: none;}
+.checkcodes .modal-content {
+    display: inline-block;
+}
+
+/*dateitime page css start here*/
+.date-time-page {width: 100%;float: left;text-align: center; padding: 50px 0;}
+
+.calender {width: 465px; margin: auto;border: 1px solid;display: inline-block; border-radius: 10px; padding: 13px;    max-width: 100%;}
+
+
+ul.photo-take li {
+    list-style: none;
+    display: inline-block;
+    width: 105px;
+    font-size: 16px;
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    line-height: 45px;
+    margin: 8px 4px;
+}
+
+ul.photo-take {
+    width: 100%;
+    float: none;
+    padding: 0px;
+    text-align: center;
+    max-width: 465px;
+    margin: auto;
+}
+
+
+
+
+ul.photo-take li a {
+    width: 100%;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+
+ul.photo-take li.active {
+    background: #16B400;
+    border: 1px solid #16B400;
+}
+
+a:hover{text-decoration:none;}
+ul.photo-take li.active a{
+   color:#fff;
+}
+
+.common-head a {
+    color: #000;
+    font-size: 25px;
+    margin-right: 40px;
+}
+
+.book-page {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+input.password {
+    background: url(../images/pass.png);
+    background-repeat: no-repeat;
+    background-position: 16px 13px;
+    padding-left: 40px !important;
+}
+
+.book-page .book-inner {
+    width: 100%;
+    max-width: 406px;
+    margin: auto;
+    display: inline-block;
+}
+.book-page h3.common-head {
+    margin-bottom: 20px;
+}
+
+.book-page .book-inner h6 {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.book-page .book-inner h6  a{
+color:#000;
+}
+
+.book-page .book-inner h6 a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.book-page form {
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+
+
+.book-inner .form-group input {
+    width: 100%;
+    border: 1px solid #000;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 17px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+
+.book-inner .form-group input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #000;
+}
+.book-inner .form-group input::-moz-placeholder { /* Firefox 19+ */
+  color: #000;
+}
+.book-inner .form-group input:-ms-input-placeholder { /* IE 10+ */
+ color: #000;
+}
+.book-inner .form-group input:-moz-placeholder { /* Firefox 18- */
+ color: #000;
+}
+.book-inner .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    float: left;
+}
+.country {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.country .select {
+    position: relative;
+    padding: 0px 7px;
+    border: 1px solid #000;
+    height: 45px;
+    background: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    width: 55px;
+    border-radius: 5px;
+    line-height: 43px;
+}
+.country .select .flagstrap-icon {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 11px;
+  background-image: url("https://zinee91.dothome.co.kr/codepen/flags.png");
+  background-repeat: no-repeat;
+  background-color: #e3e5e7;
+}
+.country .select .flagstrap-icon.flagstrap-ca {
+  background-position: -48px -22px;
+}
+.country .select .flagstrap-icon.flagstrap-us {
+  background-position: -144px -154px;
+}
+.country .select:after {
+    /* content: ""; */
+    display: block;
+    position: absolute;
+     top: 3px;
+    right: 9px;
+    width: 8px;
+    height: 5px;
+    content: "\f0d7";
+    font-family: FontAwesome;
+    color: #AAAAAA;
+}
+
+
+.next-all:hover {
+    color: #fff;
+}
+
+.book-inner .form-group > div {
+    padding: 0px 5px;
+}
+.country .select img {
+    margin-right: 11px;
+}
+.country .select.open:after {
+  background-position: 0 -5px;
+}
+
+
+.country .dropdown {
+    display: none;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 61px;
+    height: 115px;
+    border: 1px solid #000;
+    border-top: 1px solid #000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1;
+    text-align: center;
+}
+
+.country .dropdown ul {
+    padding: 0px;
+}
+
+.country .dropdown .flagstrap-icon {
+  vertical-align: middle;
+}
+.country .dropdown li {
+  padding: 0 20px;
+  line-height: 34px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #828282;
+  cursor: pointer;
+  list-style: none;
+}
+
+
+
+.country .fa-caret-down {
+    position: absolute;
+    right: 4px;
+    top: 16px;
+    color: #AAAAAA;
+}
+.country .dropdown li:first-child {
+  margin-top: 12px;
+}
+.country .dropdown li:last-child {
+  margin-bottom: 12px;
+}
+.country .dropdown li:hover {
+  background: #dedede;
+  color: #454545;
+}
+.country .dropdown li.open {
+  display: block;
+}
+
+.next-all {
+    background: #16B400;
+    width: 270px;
+    height: 45px;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-family: 'Helvetica Neue';
+}
+
+/* The container */
+
+.check-box {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 13px;
+}
+
+/* Hide the browser's default checkbox */
+.check-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+
+
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.check-box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-box .checkmark:after {
+    left: 7px;
+    top: -6px;
+    width: 8px;
+    height: 16px;
+    border: solid #16B400;
+    border-width: 0px 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.book-page iframe {
+    border: 1px solid #000 !important;
+    margin-top:10px;
+	}
+	
+.sign-btn {
+    background: #16B400;
+    width: 270px;
+    height: 45px;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 25px;
+    border-radius: 10px;
+    font-family: 'Helvetica Neue';
+}
+.book-inner .form-group input.card-detail {
+    text-align: center;
+    background: url(../images/card.png);
+    background-repeat: no-repeat;
+    background-position: 20% 50%;
+}
+
+.paypal {
+    border-radius: 5px;
+    float: left;
+    height: 45px;
+    width: 100%;
+    display: inline-block;
+    background: #004AD1;
+    line-height: 45px;
+    color: #fff;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    transition: 0.4s;
+}
+
+
+.paypal:hover {
+    color: #fff;
+}
+
+.book-page table td:last-child {
+    text-align: right;
+}
+.book-page table tbody td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    padding: 5px 10px;
+    line-height: 25px;
+}
+
+
+.book-page table {
+    width: 100%;
+}
+
+
+
+.book-page table tfoot td {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    padding: 9px 10px;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+
+
+.book-page table td:last-child {
+    text-align: right;
+}
+
+
+.user-detail figure {
+    width: 80px;
+    float: left;
+}
+
+.user-detail figcaption {
+    width: 75%;
+    float: left;
+    text-align: left;
+    padding-left: 10px;
+}
+.user-detail figcaption > p:nth-child(3) > a {
+    margin-top: 14px;
+    width: 100%;
+    float: left;
+}
+.user-detail figcaption p a {
+    color: #000;
+}
+
+
+
+.book-page table tbody td:first-child, .book-page table tfoot td:first-child {
+    text-align: left;
+}
+.user-detail figcaption b {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 4px;
+    width: 100%;
+    float: left;
+}
+
+.add-discount {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+    text-decoration: underline;
+}
+.user-detail {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.user-detail figcaption p {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 2px;
+}
+
+
+
+.checkcodes input {
+text-align:center;
+}
+.checkcodes .modal-dialog {
+    width: 406px;
+    margin: 0px auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.checkcodes .close i.fa.fa-angle-left {
+    color: #000;
+    font-size: 30px;
+    opacity: 9;
+}
+.checkcodes .close {
+    float: left;
+    opacity: 9;
+}
+
+
+.checkcodes h4{
+    color: #000;
+    font-weight: 500;
+    font-family: 'Helvetica Neue';
+    margin-top: 0px;
+    font-size: 22px;
+}
+
+
+.modal-header {
+    padding: 20px 30px;
+    border-bottom: none;
+}
+
+
+.modal-body {
+    position: relative;
+    padding: 15px 30px;
+}
+button.check-code {
+    background: #16B400;
+    width: 240px;
+    height: 45px;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 17px;
+    border-radius: 10px;
+    font-family: 'Helvetica Neue';
+    border: none;
+	
+    margin-bottom: 10px;
+}
+
+
+.login-from input {
+    width: 100%;
+    border: 1px solid #000;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+input.email-icon {
+    background: url(../images/email.png);
+    background-repeat: no-repeat;
+    background-position: 5% 51%;
+}
+
+.password-icon{
+    background: url(../images/pass.png);
+    background-repeat: no-repeat;
+    background-position: 5% 51%;
+}
+
+.login-from p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+	color:#000;
+    font-size: 16px;
+}
+.login-from p a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.modal-body.login-from {
+    padding-bottom: 12px;
+    width: 100%;
+    float: left;
+}
+
+.modal-body.login-from button.check-code {
+    margin-bottom: 20px;
+}
+
+
+.paypal-inner {
+    width: 585px;
+    margin: auto;
+    display: inline-block;
+	max-width:100%;
+}
+
+
+.paypal-inner figure {
+    margin-top: 20px;
+}
+
+
+
+.paypal-inner figure img {
+    border-radius: 10px 10px 0px 0pX;
+    width: 100%;
+}
+
+
+.paypal-inner figcaption {
+    border: 1px solid #000;
+    padding: 21px 110px;
+    border-radius: 0px 0px 10px 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+    padding-top: 27px;
+    z-index: 0;
+    margin-top: -1px;
+}
+
+#map{ width:225px; height: 100%; }
+.hider{display:none;}
+.top-bar1 img.badgeimg {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width:80px;
+}
+.top-bar1 img.selected {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width:110px;
+}
+.payment-head{
+    height:80px;
+}
+.left100p{
+    text-align:left;
+    width: 100%;
+    float:left;
+}
+.pk-btn {background: #aaaaaa;
+width: 270px; border: none;height: 45px;border-radius: 10px;font-size: 16px;text-transform: uppercase;font-family: 'Helvetica Neue';transition: 0.5s;max-width: 100%;
+color: #fff !important;
+font-weight: 500;
+}
+.pk-btn:hover { text-decoration:none; background-color: #2d252c !important;}
+.pk-btni{position:relative; float:left; left:10px;}
+.choose-pack .container .next-btn {
+    /*background: #16B400;
+    width: 100px;
+    height: 35px;
+    display: inline-block;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 10px;*/
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    font-weight:500;
+    text-decoration:underline;
+    position:absolute;
+    
+    right:10px;
+    color:#000;
+}
+.services-sec .container .next-btn {
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    font-weight:500;
+    text-decoration:underline;
+    position:absolute;
+    right:10px;
+    color:#000;
+}
+.choose-pack .container, .services-sec .container {
+    position:relative;
+}
+#promomsg{
+    float:left;
+    position:absolute;
+    top:-15px;
+}

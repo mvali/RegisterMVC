@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.PageTitle = "Order";
+    ViewBag.Metadescription = "order meta description text";
+}
+@section Scripts{
+    <script src="~/assets/scripts/order.js"></script>
+    @if (Register.Models.Job.j.Paid == true){<script>var paid = 1;</script>}
+}
+@model Register.Models.JobInfo
+<section class="book-page">
+    <div class="container">
+        <h3 class="common-head">Please create an account</h3>
+        <div class="book-inner">
+            
+            <h6>Or <a href="#" data-toggle="modal" data-target="#myModal1"> log in </a> if you already have an account</h6>
+            <div class="modal fade checkcodes" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                @Html.Action("Login", "Order")
+            </div>
+
+            @using (Html.BeginForm("Order", "Order"))
+            {@Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    @Html.TextBoxFor(x => x.FirstName, new { @placeholder = "First Name", @Value = Model.FirstName })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger left100p" })
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    @Html.TextBoxFor(x => x.LastName, new { @placeholder = "Last Name", @Value = Model.LastName })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger left100p" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    @Html.TextBoxFor(x => x.JobEmail, new { @placeholder = "Email", @Value = Model.JobEmail })
+                    @Html.ValidationMessageFor(m => m.JobEmail, "", new { @class = "text-danger left100p" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    @Html.TextBoxFor(x => x.Phone, new { @placeholder = "Mobile Phone Number", @Value=Model.Phone })
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger left100p" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    @Html.PasswordFor(x => x.Password, new { @placeholder = "Password", @class = "password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger left100p" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    @Html.PasswordFor(x => x.Password2, new { @placeholder = "Confirm Password", @class = "password" })
+                    @Html.ValidationMessageFor(m => m.Password2, "", new { @class = "text-danger left100p" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label class="check-box">
+                        I have read and I agree to the <a href="https://lookbetteronline.com/Home/PopUpMessage.asp?msg=clientagree" target="_blank">terms & conditions</a>
+                        @Html.CheckBoxFor(x=>x.TermsConditionsAgree, new { @checked=Model.TermsConditionsAgree })
+                        @Html.ValidationMessageFor(m => m.TermsConditionsAgree, "", new { @class = "text-danger left100p" })
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            if (ViewBag.msg == -1)
+            { <div class="text-danger">Temporarry error. Please contact us.</div>}
+            if (ViewBag.msg == -2)
+            {<div class="text-danger">Email address you filled already exist. Please login on your acount.</div>}
+            if (ViewBag.msg == -3 || ViewBag.msg == -31)
+            {<div class="text-danger">Invalid zipcode</div>}
+            if (ViewBag.msg == -4)
+            {<div class="text-danger">Zipcode does not match your selected state</div>}
+            if (ViewBag.msg == -5)
+            {<div class="text-danger">At least one of your ordered service was already paid. Please remove-it from your purchase.</div>}
+            if (ViewBag.msg == -10)
+            { <div class="text-danger">Your order was already submited. If you need to modify any data please contact us. Thank You.</div>}
+            if (ViewBag.msg == -11)
+            {<div class="text-danger">In order to continue you must agree our terms and conditions!</div>}
+            <button class="sign-btn@(Register.Models.Job.j.Paid? " hider" : "")" value="SUBMIT">NEXT</button>
+            }
+        </div>
+    </div>
+</section>

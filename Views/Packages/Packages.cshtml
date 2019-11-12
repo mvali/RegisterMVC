@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.PageTitle = "Packages";
+    ViewBag.MetaDescription = "packages view meta description text";
+}
+@section Scripts{
+    <script src="~/assets/scripts/packages.js"></script>
+    @if (Register.Models.Job.j.Paid == true)
+    {<script>var paid = 1;</script>}
+}
+@model IEnumerable<Register.Models.Package>
+<section class="choose-pack">
+    <div class="container">
+        <h3 class="common-head">choose your package</h3><a href="@Url.Action("Index", "Services")" class="next-btn">NEXT</a>
+        <ul class="" id="packages">
+            @foreach (var item in Model)
+            {
+                var pckClass = item.Name.ToLower().Contains("gold") ? "gold" : item.Name.ToLower().Contains("platinum") ? "platinum" : "";
+                var pckRecommended = item.Name.ToLower().Contains("gold") ? "1" : "0";
+            <li class="item">
+                <div class="@pckClass top-bar1">
+                    @item.Name 
+                    @if (item.Name.ToLower().Contains("gold"))
+                    {<img src='~/Assets/images/badge.png' class="badgeimg">}
+                    <!--<img src='~/Assets/images/selected.png' class="selected @(Register.Models.Package.Chosen(item.Id)? "hider" : "hider")" id="selected@(item.Id)"/>-->
+                </div>
+                <div class="middle-sec">
+                    <h4>$@Utils.MathRound(item.Price) @item.Currency</h4>
+                    <ol>
+                        <li>@item.Photos high resolution color images. </li>
+                        <li>@item.Looks outfit changes with various poses inc head shots 3/4 body and full length. </li>
+                        <li>@item.SessionTime minute session</li>
+                    </ol>
+                    @if (item.ServiceList.Count > 0)
+                    {
+                    <h6>services included:</h6>
+                    <ol class="sec-sec">
+                        @foreach (var service in item.ServiceList)
+                        {
+                        <li>@service.Name<span> $@Utils.MathRound(service.Price) @service.Currency</span></li>
+                        }
+                    </ol>
+                    }
+                </div>
+                <button class="pk-btn @pckClass @(Register.Models.Package.Chosen(item.Id) ? "hider" : "")" id="bPkAdd@(item.Id)" onclick="pkchoose(@item.Id)">choose</button>
+                <button class="pk-btn @pckClass @(Register.Models.Package.Chosen(item.Id) ? "" : "hider")" id="bPkEx@(item.Id)"><img src="~/Assets/images/check-boxw.png" class="pk-btni"><div class="pk-btnin">selected</div></button>
+            </li>
+            }
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,64 @@
+
+--------------------------------------------------------------------------------
+10/26/2019 04:05:04.56   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: http://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:05:04.58   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: http://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:05:04.58   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: http://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:05:04.58   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: http://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:13:00.62   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: https://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:13:00.64   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: https://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:13:00.64   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: https://lookbetteronline.com/Register/Payment
+
+--------------------------------------------------------------------------------
+10/26/2019 04:13:00.64   -     ex: System.Net.Mail.SmtpException: Cannot get IIS pickup directory.
+   at System.Net.Mail.IisPickupDirectory.GetPickupDirectory()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at EmailServer.EmailSendGo(MailType from, MailType to, String body, String subject, List`1 AttachmentFilePath)
+
+Uri: https://lookbetteronline.com/Register/Payment
