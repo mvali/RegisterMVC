@@ -27,7 +27,7 @@ function SelectedShow(countryId) {
 }
 
 countryDropdown('#country');
-//$('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/view?key=AIzaSyA4P_jCk3ttS0gVsd5sdDZTqPr-_GBGZG4&center=40.38785,-95.84158&zoom=3");
+//$('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/view?key=A...&center=40.38785,-95.84158&zoom=3");
 
 
 function ZipChange(zipcodeValue)
@@ -64,8 +64,8 @@ function ZipChange(zipcodeValue)
                 $("#StateCode").val(data[0].StateCode);
                 SelectedShow(data[0].CountryId);
                 $("#CountryId").val(data[0].CountryId);
-                $('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyA4P_jCk3ttS0gVsd5sdDZTqPr-_GBGZG4&q=zip:" + zip + "+" + data[0].City + "," + data[0].State);
-                //$('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/view?key=AIzaSyA4P_jCk3ttS0gVsd5sdDZTqPr-_GBGZG4&center=" + data[0].Latitude + "," + data[0].Longitude + "&zoom=15");
+                $('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/place?key=A...&q=zip:" + zip + "+" + data[0].City + "," + data[0].State);
+                //$('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/view?key=A...&center=" + data[0].Latitude + "," + data[0].Longitude + "&zoom=15");
             }
         } else {
             str = "Zip code not found on our database. Did you write'it correctly?";
@@ -145,7 +145,7 @@ function ZipFromSave() {
     var city = $("#City").val(), state = $("#State").val(), countryId = $("#CountryId").val(), zipFound=0;
     if (city && state && countryId) {
         SelectedShow(countryId); zipFound = 1;
-        $('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyA4P_jCk3ttS0gVsd5sdDZTqPr-_GBGZG4&q=zip:" + zip + "+" + city + "," + state);
+        $('#ifmap').attr('src', "https://www.google.com/maps/embed/v1/place?key=A...&q=zip:" + zip + "+" + city + "," + state);
     }
     else {
         str = "Zip code not found on our database. Did you write'it correctly ?";
