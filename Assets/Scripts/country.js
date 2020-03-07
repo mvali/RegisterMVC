@@ -3,11 +3,6 @@ function countryDropdown(seletor){
 	var Drop = $(seletor+'-drop');
 	var DropItem = Drop.find('li');
 
-	/*Selected.click(function(){
-		Selected.toggleClass('open');
-		Drop.toggle();
-	});*/
-
 	Drop.find('li').click(function(){
 		Selected.removeClass('open');
 		Drop.hide();
@@ -50,7 +45,6 @@ function ZipChange(zipcodeValue)
     } else {
         if (!(zip.length >= 5 && zip.length <= 7)) {
             str = "Invalid zip code";
-            //DisplayDiv(str, "zipInvalid", true);
             zipValid = false;
         }
     }
@@ -59,12 +53,11 @@ function ZipChange(zipcodeValue)
         return;
     }
 
-    var url = "/Addresses/ZipDetails/";
+    var url = "/Controller/Action/";
     var zipFound = 0;
     $.get(url, { zipcode: zip }, function (data) {
         if (Object.keys(data).length > 0) {
             if (data[0].hasOwnProperty("State")) {
-                //str = "State: " + data[0].State + " City: " + data[0].City + " Lat:" + data[0].Latitude + " Long:" + data[0].Longitude;
                 zipFound = 1;
                 $("#City").val(data[0].City);
                 $("#State").val(data[0].State);
@@ -262,12 +255,11 @@ function ZipChangeBill(zipcodeValue) {
         return;
     }
 
-    var url = "/Addresses/ZipDetails/";
+    var url = "/Controller/Action/";
     var zipFound = 0;
     $.get(url, { zipcode: zip }, function (data) {
         if (Object.keys(data).length > 0) {
             if (data[0].hasOwnProperty("State")) {
-                //str = "State: " + data[0].State + " City: " + data[0].City + " Lat:" + data[0].Latitude + " Long:" + data[0].Longitude;
                 zipFound = 1;
                 $("#CityBill").val(data[0].City);
                 $("#StateBill").val(data[0].State);
@@ -288,14 +280,4 @@ function ZipChangeBill(zipcodeValue) {
     });
 }
 $(document).ready(function () {
-    var go = false;
-    if (typeof paid != 'undefined') { if (paid) go = true;}
-    if (go) {
-        $(".book-page :input").attr("readonly", true);
-        $(".book-page :input[type=checkbox]").attr("disabled", "disabled");
-        $("form").submit(function (e) {
-            alert("Your order was already submited. If you need to modify any data please contact us. Thank You.");
-            e.preventDefault();
-        });
-    }
 });

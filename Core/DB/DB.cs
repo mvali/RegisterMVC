@@ -309,9 +309,6 @@ public class Db : IDisposable
         try
         {
             con.Open();
-            //GridView1.EmptyDataText = "No Records Found";
-            //GridView1.DataSource = cmd.ExecuteReader();
-            //GridView1.DataBind(); 
         }
         catch (Exception ex)
         {
@@ -322,18 +319,6 @@ public class Db : IDisposable
             con.Close();
             con.Dispose();
         }
-
-        /*SqlCommand cmd = new SqlCommand("CustOrderHist", new SqlConnection("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\NORTHWND.mdf;Integrated Security=True;User Instance=True"));
-        cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.AddWithValue("CustomerID", "ALFKI");
- 
-        using (cmd.Connection)
-        {
-            cmd.Connection.Open();
- 
-            GridView1.DataSource = cmd.ExecuteReader();
-            GridView1.DataBind();
-        }*/
     }
 
 

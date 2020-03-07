@@ -26,21 +26,12 @@ namespace Register.Models
         {
             PromoCode p = new PromoCode();
             DataTable dt = new DataTable();
-            int r = new PromoCodes().PromoCodeV2_get_byname(pc_name, ref dt);
+            int r = new PromoCodes().P...(pc_name, ref dt);
             if(r>=0 && dt.Rows.Count>0)
             {
                 DataRow row = dt.Rows[0];
                 p.Name = pc_name;
-                p.DiscountValue = Utils.Str2Decimal(row["pc_discountValue"].ToString());
-                p.DiscountType = Utils.Str2Int(row["pc_discountType"].ToString());
-                p.AppliesTo = Utils.Str2Int(row["pc_appliesTo"].ToString());
-                p.DateStart = Utils.Str2Int(row["dateStart"].ToString());
-                p.DateEnd = Utils.Str2Int(row["dateEnd"].ToString());
-                p.UserRestriction = Utils.Str2Int(row["pc_userRestriction"].ToString());
-                p.UsageLimit = Utils.Str2Int(row["pc_usageLimit"].ToString());
-                p.UsageCurrent = Utils.Str2Int(row["pc_usageCurent"].ToString());
-                p.DiscountValuea = Utils.Str2Decimal(row["pca_discountValue"].ToString());
-                p.DiscountTypea = Utils.Str2Int(row["pca_discountType"].ToString());
+                p.DiscountValue = Utils.Str2Decimal(row[".."].ToString());
             }
             return p;
         }
@@ -83,24 +74,6 @@ namespace Register.Models
             return pr;
         }
 
-        private int ClientCompletedJobs()
-        {
-            DataTable dt = new DataTable();
-            string jobEmail = Job.Session().JobPersonalInfo.JobEmail;
-            int r = new Jobs().Job_GetByEmail(jobEmail, ref dt);
-
-            int retV = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                int Id_JobStatus = Utils.Str2Int(dt.Rows[i]["Id_JobStatus"].ToString());
-                if(Id_JobStatus>=7 && Id_JobStatus <10)
-                {
-                    retV = retV + 1;
-                }
-            }
-            return retV;
-        }
-
         public static decimal PromocodeAdd(PromocodeResponse pr)
         {
             if (pr.type >= 0)
@@ -134,7 +107,7 @@ namespace Register.Models
             return promoAmount;
         }
         /// <summary>
-        /// addiliate commission
+        /// affiliate commission
         /// </summary>
         /// <param name="amountTotal"></param>
         /// <param name="servicesPrice">not used</param>
@@ -150,9 +123,6 @@ namespace Register.Models
             if (j.Promocode != null)
                 if (j.Promocode.typea >= 0 && j.Promocode.valuea>0)
                 {
-                    //if (j.Promocode.appliesTo == 2)
-                    //    sourceAmount = servicesPrice;
-
                     if (j.Promocode.typea == 1)// fixed amount
                         promoAmount = j.Promocode.valuea;
                     if (j.Promocode.typea == 2)// percent

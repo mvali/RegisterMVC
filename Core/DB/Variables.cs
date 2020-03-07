@@ -13,10 +13,10 @@ public class Variables
         {
             Db data = new Db();
             SqlParameter[] prams = {
-data.MakeInParam("@name", SqlDbType.VarChar, name.Length, name),
-data.MakeInParam("@sitesId", SqlDbType.Int, 4, 1)
+data.MakeInParam("@n", SqlDbType.VarChar, name.Length, name),
+data.MakeInParam("@s", SqlDbType.Int, 4, 1)
                                    };
-            int r = data.RunProc("N4_spAdmin_Variable_GetByName", out dt, prams);
+            int r = data.RunProc("aa", out dt, prams);
             return r;
         }
         catch (Exception ex)
@@ -27,12 +27,14 @@ data.MakeInParam("@sitesId", SqlDbType.Int, 4, 1)
     }
     public static string VariableGetByName(string name)
     {
+        // just a fix from stone age programming
         string sRet = "";
         System.Data.DataTable dt = new System.Data.DataTable();
         int r = new Variables().Admin_Variable_GetByName(name, ref dt);
 
         if (dt.Rows.Count > 0)
             sRet = dt.Rows[0]["Valor"].ToString().Trim();
+
         sRet = sRet.Replace(System.Environment.NewLine, "");
         return sRet.Trim();
     }

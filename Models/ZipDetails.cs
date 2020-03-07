@@ -57,18 +57,11 @@ namespace Register.Models
         {
             List<ZipDetails> ret = new List<ZipDetails>();
             DataTable dt = new DataTable();
-            int r = new Zipcodes().Zipcode_GetCitiesCountry(zipcode, ref dt);
+            int r = new Zipcodes().Z..._...(zipcode, ref dt);
 
             foreach(DataRow dr in dt.Rows)
             {
-                ret.Add(new ZipDetails(dr["ZIPCode"].ToString(),
-                    dr["City"].ToString(),
-                    dr["State"].ToString(),
-                    dr["StateCode"].ToString(),
-                    Utils.Str2Decimal(dr["Latitude"].ToString()),
-                    Utils.Str2Decimal(dr["Longitude"].ToString()),
-                    Utils.Str2Int(dr["fk_CountriesId"].ToString())
-                    ));
+                ret.Add(new ZipDetails(...));
                 break;
             }
             

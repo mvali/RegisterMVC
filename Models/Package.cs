@@ -22,27 +22,20 @@ namespace Register.Models
         public List<Service> ServiceListAll { get; set; }
 
         public Package() { }
-        public Package(int id, string name, int photos, int looks, int sessiontime, decimal price, string currency, int currencyId, decimal currencyVaue, string currencySymbol, List<Service> servicesList, List<Service> servicesListAll)
+        public Package(int id, string name, ... List<Service> servicesList)
         {
             Id = id;
             Name = name;
-            Photos = photos;
-            Looks = looks;
-            SessionTime = sessiontime;
-            Price = price;
-            Currency = currency;
-            CurrencyId = currencyId;
-            CurrencyValue = currencyVaue;
+            ...
             CurrencySymbol = currencySymbol;
             ServiceList = servicesList;
-            ServiceListAll = servicesListAll;
         }
         public IEnumerable<Package> GetByCountry()
         {
             List <Package> pl = new List<Package>();
             DataTable dt = new DataTable();
             int countryId = Models.Job.Session().Zip.CountryId;
-            int r = new Packages().Packages_get_byCountryId(countryId, ref dt);
+            int r = new Packages().P..._...(countryId, ref dt);
 
             List<Service> sl = new List<Service>();
             List<Service> slA = new List<Service>();
@@ -55,21 +48,10 @@ namespace Register.Models
                 cnt++;
                 int pk_id = Utils.Str2Int(dr["pk_id"].ToString());
                 int pk_idNext = i + 1 < drLast ? Utils.Str2Int(dt.Rows[i + 1]["pk_id"].ToString()) : -1;
+
                 c_value = Utils.Str2Decimal(dr["c_value"].ToString());
 
-                Service srv = new Service(
-                    Utils.Str2Int(dr["services_id"].ToString()),
-                    dr["services_name"].ToString(),
-                    dr["services_text"].ToString(),
-                    Utils.Str2Int(dr["pk_id"].ToString()),
-                    Utils.Str2Int(dr["fk_users"].ToString()),
-                    Utils.Str2Bool(dr["p_status"].ToString()),
-                    Utils.Str2Decimal(dr["p_value"].ToString()),
-                    dr["c_name"].ToString(),
-                    Utils.Str2Int(dr["c_id"].ToString()),
-                    c_value,
-                    dr["c_symbol"].ToString()
-                    );
+                Service srv = new Service(...);
 
                 slA.Add(srv);
                 if (Utils.Str2Bool(dr["p_status"].ToString()))
@@ -79,18 +61,7 @@ namespace Register.Models
                 {
                     List<Service> s1 = new List<Service>(sl);
                     List<Service> sa1 = new List<Service>(slA);
-                    Package p = new Package(pk_id,
-                        dr["pk_name"].ToString(),
-                        Utils.Str2Int(dr["pk_photos"].ToString()),
-                        Utils.Str2Int(dr["pk_looks"].ToString()),
-                        Utils.Str2Int(dr["pk_sessiontime"].ToString()),
-                        Utils.Str2Decimal(dr["pp_price"].ToString()),
-                        dr["c_name"].ToString(),
-                        Utils.Str2Int(dr["c_id"].ToString()),
-                        c_value,
-                        dr["c_symbol"].ToString(),
-                        s1, sa1
-                        );
+                    Package p = new Package(...);
                     pl.Add(p);
                     sl.Clear();
                     slA.Clear();
@@ -102,7 +73,7 @@ namespace Register.Models
         {
             int pkid = Job.Session().PackageId;
             var pk = new Package();
-            var pkList = GetByCountry().Where(x => x.Id == pkid);
+            var pkList = G...().Where(x => x.Id == pkid);
             if(pkList.Count()>0)
                 pk = pkList.First();
 
@@ -125,7 +96,7 @@ namespace Register.Models
 
                 Job.Update(jb);
 
-                new Packages().JobPackageService_Add(jb.Id, jb.CountryId, jb.CurrencyValue, pkid);
+                new Packages().J...Update(jb.Id, jb.CountryId, jb.CurrencyValue, pkid);
             }
             else
                 pkId = Job.Session().PackageId;

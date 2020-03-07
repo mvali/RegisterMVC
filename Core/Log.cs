@@ -13,12 +13,12 @@ public static class Log
         string fpath = "";
         try
         {
-            fpath = System.Configuration.ConfigurationManager.AppSettings["LogPath"].ToString();
+            fpath = System.Configuration.ConfigurationManager.AppSettings["lp"].ToString();
             fpath = myPage.Server.MapPath(fpath);
         }
         catch
         {
-            fpath = System.Configuration.ConfigurationManager.AppSettings["LogPath"].ToString();
+            fpath = System.Configuration.ConfigurationManager.AppSettings["lp"].ToString();
         }
 
         try
@@ -59,7 +59,6 @@ public static class Log
 
             string filepath = GetFileFullName(filename);
 
-            //FileInfo fi = new FileInfo(myPage.Server.MapPath("/Logs/ErrorLog.txt"));
             FileInfo fi = new FileInfo(filepath);
 
             if (fi.Length > 2000000)
@@ -113,7 +112,7 @@ public static class Log
         }
         catch (Exception ex1)
         {
-            System.Web.HttpContext.Current.Response.Write("Clog_ex2:" + ex1.ToString());
+            System.Web.HttpContext.Current.Response.Write("Clog_exc:" + ex1.ToString());
         }
     }
 }

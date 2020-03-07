@@ -21,8 +21,6 @@ namespace Register
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DataAnnotationsModelValidatorProvider.RegisterAdapter(typeof(RequiredIfAttribute), typeof(RequiredIfValidator));
             DataAnnotationsModelValidatorProvider.RegisterAdapter(typeof(AssertThatAttribute), typeof(AssertThatValidator));
-            //ModelValidatorProviders.Providers.Remove(ModelValidatorProviders.Providers.FirstOrDefault(x => x is DataAnnotationsModelValidatorProvider));
-            //ModelValidatorProviders.Providers.Add(new ExpressiveAnnotationsModelValidatorProvider());
         }
     }
 }

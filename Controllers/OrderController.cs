@@ -64,16 +64,6 @@ namespace Register.Controllers
                 int r = new Jobs().Job_AddCheck(j.Id, job_id_parent, ji.JobEmail, j.Zip.ZipCode, j.Zip.StateCode, servicesToPay, j.Zip.CountryId);
                 if (r < 0)
                 {
-                    /*string msg = "err";
-                    switch (r)
-                    {
-                        case -1: msg = "err";break;
-                        case -2: msg = "emailexists"; break;
-                        case -3: msg = "zipcodeinvalid"; break;
-                        case -4: msg = "zipcodestatedonotmatch"; break;
-                        case -5: msg = "servicespaid"; break;
-                    }*/
-
                     ViewBag.msg = r;
                     return View("Order", ji);
                 }
@@ -86,7 +76,7 @@ namespace Register.Controllers
 
                     string visitDateCk = Models.Job.VisitorSignupCookieGet("visitdate");
                     string visitDate = !String.IsNullOrWhiteSpace(visitDateCk) ? DateTime.Parse(Server.UrlDecode(visitDateCk)).ToString() : "";
-                    //string visitDate = DateTime.Parse(Server.UrlDecode("1%2F5%2F2019+10%3A43%3A48+PM")).ToString();
+
                     int bannerId = Models.Job.BannerGet();
                     int jobMailingList = 0;
 
@@ -140,7 +130,6 @@ namespace Register.Controllers
                 LoggedProfile lp = LoggedProfile.LoggedDbRead(jl.JobEmail, jl.Password);
                 if (lp.Id > 0)
                 {
-                    //return RedirectToAction("Index", "Order");
                     ViewBag.msg = 1;
                     return PartialView("Login", jl);
                 }

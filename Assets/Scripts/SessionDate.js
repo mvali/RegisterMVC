@@ -43,18 +43,3 @@ function CheckAvailabilityT(testime) {
         }
     }
 }
-
-function ispaid() {
-    var go = false;
-    if (typeof paid != 'undefined') { if (paid) go = true; }
-    return go;
-}
-function disable() {
-    if (ispaid()) {
-        $(".book-page :input").attr("readonly", true);
-        $("form").submit(function (e) {
-            alert("Your order was already submited. If you need to modify any data please contact us. Thank You.");
-            e.preventDefault();
-        });
-    }
-}

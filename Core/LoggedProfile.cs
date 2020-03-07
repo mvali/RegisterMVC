@@ -58,12 +58,9 @@ public class LoggedProfile
         if (dt.Rows.Count < 1)
             return lu;
 
-        lu = new LoggedProfile(dt.Rows[0]["JobEmail"].ToString(),
-            dt.Rows[0]["JobPassword"].ToString(),
-            ut.Str2Int(dt.Rows[0]["Id_Job"].ToString()),
-            dt.Rows[0]["JobFirstName"].ToString(),
-            dt.Rows[0]["JobLastName"].ToString(),
-            dt.Rows[0]["JobPhone"].ToString(),
+        lu = new LoggedProfile(dt.Rows[0]["email"].ToString(),
+            dt.Rows[0]["pass"].ToString(),
+            ut.Str2Int(dt.Rows[0]["id"].ToString()),
             dt.Rows[0]);
         System.Web.HttpContext.Current.Session[LoggedCookieName()] = lu;
         LoggedCookieWrite(lu);
@@ -78,7 +75,7 @@ public class LoggedProfile
     static void LoggedCookieWrite(LoggedProfile lu)
     {
         HttpCookie ck = new HttpCookie(LoggedCookieName());
-        ck.Value = ut.Base64Encode("email=" + lu.Email + "&password=" + lu.Password);
+        ck.Value = ut.Base64Encode("e=" + lu.Email + "&p=" + lu.Password);
         ck.Expires = System.DateTime.Now.AddDays(14);
         ck.Secure = true;
         ck.HttpOnly = true;
@@ -117,8 +114,8 @@ public class LoggedProfile
             {
                 string strContent = ut.Base64Decode(ck.Value);
                 CQueryString qs = new CQueryString(strContent);
-                string email = qs["email"];
-                string password = qs["password"];
+                string email = qs["e"];
+                string password = qs["p"];
                 if (!String.IsNullOrWhiteSpace(email) && !String.IsNullOrWhiteSpace(password))
                 {// load from db
                     lu = LoggedDbRead(email, password);

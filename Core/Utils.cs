@@ -26,15 +26,6 @@ public static class Utils
     {
         return TempDataU(keyName, dict, defaultValue).ToString();
     }
-    /*public static int ModelCount(IEnumerable<object>? t)
-    {
-        int retV = 0;
-        if (t != null)
-        {
-            retV = t.Count();
-        }
-        return retV;
-    }*/
     public static int Null2Int(int? a)
     {
         var retV = 0;
@@ -485,9 +476,7 @@ public static class Utils
         string strRet = "";
         if (Str2Date(strValue) != null)
         {
-            //rw("a=" + strValue);
             strRet = Str2DateNN(strValue).ToString(ToStringFormat);
-            //rw("a1");
         }
         return strRet;
     }

@@ -19,11 +19,6 @@ public class MailType
 public class MailTo
 {
     public string EmailAddress { get; set; }
-    /*public List<EmailAddress> { get; set; }
-    public MailTo(string emailAddress)
-    {
-        EmailAddress = emailAddress;//List<MailTo> to
-    }*/
 }
 public class EmailParameter
 {
@@ -54,10 +49,10 @@ public class EmailParameterBlock
 
 public class EmailServer
 {
-    public bool testMode = Utils.Str2Bool(System.Configuration.ConfigurationManager.AppSettings["EmailTestMode"].ToString());
+    public bool testMode = Utils.Str2Bool(System.Configuration.ConfigurationManager.AppSettings["etm"].ToString());
     // fill with data from database
-    public string testEmail = System.Configuration.ConfigurationManager.AppSettings["testEmail"].ToString();
-    public string emailPickupDirectory = System.Configuration.ConfigurationManager.AppSettings["EmailPickupDirectory"].ToString();
+    public string testEmail = System.Configuration.ConfigurationManager.AppSettings["te"].ToString();
+    public string emailPickupDirectory = System.Configuration.ConfigurationManager.AppSettings["epd"].ToString();
 
 
     SmtpClient Smtp()
@@ -66,17 +61,12 @@ public class EmailServer
 
         //sm.Credentials = new System.Net.NetworkCredential("email@server.com", "password");
         //sm.DeliveryMethod = SmtpDeliveryMethod.Network;// to send to live server
-        if (Utils.AppSetting("EmailDeliveryMethod") == "localDirectory")
+        if (Utils.AppSetting("ed") == "localDirectory")
         {
             sm.UseDefaultCredentials = true;
             sm.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
             sm.PickupDirectoryLocation = Utils.MapPath(emailPickupDirectory);
             sm.EnableSsl = false;
-        }
-        else
-        {
-            //sm.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //sm.Port = 25;
         }
         return sm;
     }
@@ -139,9 +129,9 @@ public class EmailServer
     public int EmailSend(string EmailNameFromDB, MailType to, List<EmailParameter> ep, List<EmailParameterBlock> epb, string sitesName = "", List<string> AttachmentFilePath = null
         , string subject = "", string body = "", string fromEmail = "", string fromText = ""
         )
-    {//SMPhotographerVerificationMail not present, SMPhotographerAddMailHTML on add new photographer and on photographer_accepted (for approve photographer mail is separate)
+    {   //SMPhotographerVerificationMail not present, SMPhotographerAddMailHTML on add new photographer and on photographer_accepted (for approve photographer mail is separate)
+
         int r = 0; string fromName = "";
-        //string subject = ""; string body = ""; string fromEmail="";
         /*string subject = "Subject {PARAM1} test123";
         string body = "asas {PARAM1} <!--BeginBLOCK1-->text123;{PARAM2} text123{PARAM1}-{PARAM2}TEXT123<!--EndBLOCK1-->";
         string fromName = "Sender's name";
@@ -152,10 +142,10 @@ public class EmailServer
             DataTable dt = new DataTable();
             r = new SiteEmails().Emails_GetByName(EmailNameFromDB, sitesName, ref dt);
 
-            subject = dt.Rows[0]["EmailSubject"].ToString();
-            body = dt.Rows[0]["EmailBody"].ToString();
-            fromName = dt.Rows[0]["adm_email_name"].ToString();
-            fromEmail = dt.Rows[0]["adm_email"].ToString();
+            subject = dt.Rows[0]["es"].ToString();
+            body = dt.Rows[0]["eb"].ToString();
+            fromName = dt.Rows[0]["ean"].ToString();
+            fromEmail = dt.Rows[0]["ae"].ToString();
         }
         else { fromName = fromText; }
 
@@ -307,22 +297,6 @@ public class EmailServer
         {
             sRet = sfirstString.Substring(0, lastString);
             sRet += sfirstString.Substring(lastString + endBlock.Length);
-        }
-
-        return sRet;
-    }
-
-    public static string EmailAdministrator()
-    {
-        string sRet = "";
-        if (System.Web.HttpContext.Current.Session["EmailAdministrator"] != null)
-        {
-            return System.Web.HttpContext.Current.Session["EmailAdministrator"].ToString();
-        }
-        else
-        {
-            sRet = Variables.VariableGetByName("EmailAdministrator");
-            System.Web.HttpContext.Current.Session["EmailAdministrator"] = sRet;
         }
 
         return sRet;

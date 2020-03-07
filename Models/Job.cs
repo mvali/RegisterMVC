@@ -12,9 +12,7 @@ namespace Register.Models
         public List<int> ServicesId { get; set; }
         public int CountryId { get; set; }
         public int PackageId { get; set; }
-        //public Address AddressHome { get; set; }
         public ZipDetails Zip { get; set; }
-        //public ZipDetails ZipHome { get; set; }
         public DateTime SessionDateTime { get; set; }
         public int SessionTime { get; set; }
         public JobInfo JobPersonalInfo { get; set; }
@@ -30,21 +28,17 @@ namespace Register.Models
             Zip = new ZipDetails();
             ServicesId = new List<int>();
             JobPersonalInfo = new JobInfo();
-            Paid = false;
-            CurrencyValue = 1;
             CurrencyId = -1;
         }
         public static void Update(Job ju)
         {
-            //Job j = Session();
-            //j.PackageId = packageId;
-            System.Web.HttpContext.Current.Session["Job"] = ju;
+            System.Web.HttpContext.Current.Session["..."] = ju;
         }
         public static Job Session()
         {
-            if (System.Web.HttpContext.Current.Session["Job"] != null)
+            if (System.Web.HttpContext.Current.Session["..."] != null)
             {
-                return (Job)System.Web.HttpContext.Current.Session["Job"];
+                return (Job)System.Web.HttpContext.Current.Session["..."];
             }
             else
                 return new Job();
@@ -115,7 +109,7 @@ namespace Register.Models
             var sl = new List<Service>();
             var p = new Package();
             decimal promoCodeAmount = 0;
-            return AmountTotal(false, ref sl, ref p, ref promoCodeAmount);
+            return AmountTotal(...);
         }
         public static decimal AmountTotal(bool getLists, ref List<Service> services, ref Package pack, ref decimal promoCodeAmount) {
             decimal retV = 0;
@@ -162,7 +156,7 @@ namespace Register.Models
                 {
                     s.Add(serviceId);
                     if (j.Id > 0 && j.PackageId > 0)
-                        new Services().JobServices_addnew(j.Id, j.PackageId, serviceId);
+                        new Services().J...Add(j.Id, j.PackageId, serviceId);
 
                 }
             }
@@ -172,14 +166,14 @@ namespace Register.Models
                 {
                     s.Remove(serviceId);
                     if (j.Id > 0 && j.PackageId > 0)
-                        new Services().JobServices_Delete(j.Id, j.PackageId, serviceId);
+                        new Services().J...Del(j.Id, j.PackageId, serviceId);
                 }
             }
 
             j.ServicesId = s;
             Job.Update(j);
             decimal retV = AmountTotal();
-            int r5 = new Jobs().Job_UpdateTotal(j.Id, retV);//services_price_all
+            int r5 = new Jobs().J...Update(j.Id, retV);
 
             return retV;
         }
@@ -196,14 +190,12 @@ namespace Register.Models
         public static int SessionDateTimeUpdate(string sessionDate)
         {
             var retV = 0;
-            //try{
             Job j = Job.Session();
             DateTime sd = DateTime.Parse(sessionDate);
             //DateTime sd = DateTime.ParseExact(sessionDate, "dd/MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
             j.SessionDateTime = sd;
             Job.Update(j);
             retV = 1;
-            //}catch (Exception ex) { }
 
             return retV;
         }
@@ -217,44 +209,13 @@ namespace Register.Models
 
             return retV;
         }
-        public static void JobUpdate()
-        {
-            Job j = Job.Session();
-            int r = new Jobs().Job_AddCheck(j.Id, LoggedProfile.logged.Id, j.JobPersonalInfo.JobEmail, j.Zip.ZipCode, j.Zip.StateCode, "services", j.Zip.CountryId);
-        }
 
-        public static string RefererGet()
-        {
-            string retV = "";
-            HttpCookie hq = HttpContext.Current.Request.Cookies["lboreferer"];
-            if (hq != null)
-                retV = hq.Value;
-
-            return retV;
-        }
-        public static int BannerGet()
-        {
-            int retV = -1;
-            HttpCookie hq = HttpContext.Current.Request.Cookies["banner"];
-            if (hq != null)
-                retV = Utils.Str2Int(hq.Values["callId"]);
-
-            return retV;
-        }
-        public static string VisitorSignupCookieGet(string visitorDetail)
-        {
-            string retV = "";
-            HttpCookie hq = HttpContext.Current.Request.Cookies["visitorsignup"];
-            if (hq != null)
-                retV = hq.Values[visitorDetail];
-
-            return retV;
-        }
-        public static Job j { get
+        public static Job j
+        {   get
             {
                 return Session();
             }
-            set { } }
+        }
 
     }
 }

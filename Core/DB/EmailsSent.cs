@@ -13,11 +13,11 @@ public class EmailsSent
         {
             Db data = new Db();
             SqlParameter[] prams = {
-data.MakeInParam("@EmailAddress", SqlDbType.VarChar, EmailAddress.Length, EmailAddress),
-data.MakeInParam("@EmailSubject", SqlDbType.VarChar, EmailSubject.Length, EmailSubject),
-data.MakeInParam("@EmailText", SqlDbType.Text, EmailText.Length, EmailText)
+data.MakeInParam("@ea", SqlDbType.VarChar, EmailAddress.Length, EmailAddress),
+data.MakeInParam("@es", SqlDbType.VarChar, EmailSubject.Length, EmailSubject),
+data.MakeInParam("@et", SqlDbType.Text, EmailText.Length, EmailText)
                                    };
-            int r = data.RunProc("N4_spEmails_AddNew", prams);
+            int r = data.RunProc("aaa", prams);
             return r;
         }
         catch (Exception ex)

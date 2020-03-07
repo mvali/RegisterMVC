@@ -19,52 +19,9 @@ namespace Register.Core
         public static string pHImagesURL
         {
             get { return Utils.AppSetting("sPHImagesURL"); }
-            set { }
         }
 
 
-        public static string SolveImageUrl(int ID, string ImageType, string ImageID, string ImageExt, bool Thumb, string AccessedBy = "url")
-        {
-            string sRet = "";
-
-            if (ID > 0)
-            {
-                if (ImageType == "Photo" || ImageType == "PhotoStamp" || ImageType == "PhotoBW" || ImageType == "PhotoStampBW" || ImageType == "PhotoSepia" || ImageType == "PhotoStampSepia")
-                {
-                    //sRet = BuildJobImageURL(ID.ToString(), ImageType, ImageID, ImageExt, Thumb, AccessedBy);
-                }
-                else if (ImageType == "Photographer" || ImageType == "Map" || ImageType == "Sample" || ImageType == "Studio")
-                {
-                    sRet = BuildPHImageURL(ID.ToString(), ImageType, ImageID, ImageExt, Thumb, AccessedBy);
-                }
-            }
-            else
-            {
-                if (AccessedBy == "url")
-                    sRet = imagesUrl + "/" + "noimage.gif";
-            }
-            if (AccessedBy == "path")
-                sRet = sRet.Replace("/", "\\");
-
-            return sRet;
-        }
-        public static string BuildPHImageURL(string phId, string imageType, string imageId, string imageExt, bool imageThumb, string AccessedBy = "url")
-        {
-            string sRet = "";
-            string sRoot = PathRootGet(AccessedBy, pHImagesURL, Utils.AppSetting("sPHImagesPath"));
-            if (!imageThumb)
-            {
-                if (imageType == "Photographer" || imageType == "Studio")
-                    sRet = sRoot + "/" + GetHashValue(Utils.Str2Int(phId)) + phId + "/" + imageType + imageId + "." + imageExt;
-                else
-                    sRet = sRoot + "/" + GetHashValue(Utils.Str2Int(phId)) + phId + "/" + imageType + imageId + "-Full" + "." + imageExt;
-            }
-            else
-            {
-                sRet = sRoot + "/" + GetHashValue(Utils.Str2Int(phId)) + phId + "/" + imageType + imageId + "-Thumb080" + "." + imageExt;
-            }
-            return sRet;
-        }
         public static string PathRootGet(string AccessedBy, string url, string path)
         {
             string sRoot = "";
@@ -98,7 +55,6 @@ namespace Register.Core
             if (iRet * 500 > dupid)
                 iRet = iRet - 1;
 
-            //iRet = (((upid / 499) + 1) * 500);
             iRet = ((iRet + 1) * 500);
 
             return iRet.ToString() + sDelimiter;

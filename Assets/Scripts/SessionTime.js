@@ -36,7 +36,6 @@ function CheckAvailabilityT(testime) {
 }
 /*begin time section*/
 function disable(){
-    if (!ispaid()) {
         $(".photo-take").find("li").click(function () {
             DeactivateH();
             var item = $(this);
@@ -45,23 +44,7 @@ function disable(){
             CheckAvailabilityT(item.attr("hr"));
         })
         CheckAvailabilityTd();
-    } else {
-        $(".photo-take").find("li").click(function () {
-            alert("Your order was already submited. If you need to modify any data please contact us. Thank You.");
-        });
-        $("form").submit(function (e) {
-            alert("Your order was already submited. If you need to modify any data please contact us. Thank You.");
-            e.preventDefault();
-        });
-    }
 }
 function DeactivateH() {
     $(".photo-take").find("li.active").removeClass("active");
-}
-/*end time section*/
-
-function ispaid() {
-    var go = false;
-    if (typeof paid != 'undefined') { if (paid) go = true; }
-    return go;
-}
+}/*end time section*/
